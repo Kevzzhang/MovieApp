@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">MovieApp</string>
+    <string name="title_app">Movie App</string>
+    <string name="genre_picker">Genre</string>
+    <string name="movie_list">Movie List</string>
+
+    <string name="error_api_message">Terjadi kesalahan pada server, silakan di coba lagi.</string>
+    <string name="retry">Retry</string>
+    <string name="genre_title">Genre List</string>
+    <string name="no_video">video link is empty</string>
+    <string name="plot_summary">Plot Summary</string>
+    <string name="production_company">Production Company</string>
+    <string name="show_review">Show Review</string>
+    <string name="review">Movie Review</string>
+    <string name="no_more_data">No more data available.</string>
+    <string name="no_review_available">No review available.</string>
+    <string name="default_rating">0</string>
+
+</resources>

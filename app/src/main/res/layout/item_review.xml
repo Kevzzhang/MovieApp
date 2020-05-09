@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/transparent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_10dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ic_user"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_username"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintWidth_percent="0.2"
+        app:srcCompat="@drawable/ic_profile" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_username"
+        style="@style/MovieTitleMediumBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:fontFamily="@font/montserrat"
+        android:layout_marginStart="@dimen/_10dp"
+        app:layout_constraintBottom_toBottomOf="@id/ic_user"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/ic_user"
+        app:layout_constraintTop_toTopOf="@id/ic_user"
+        app:layout_constraintWidth_percent="0.7"
+        tools:text="Kevin" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_user_review"
+        style="@style/TextDetailSmall"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10dp"
+        android:layout_marginBottom="@dimen/_15dp"
+        app:fontFamily="@font/montserrat"
+        app:layout_constraintWidth_percent="0.9"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/ic_user"
+        app:layout_constraintEnd_toEndOf="@id/tv_username"
+        app:layout_constraintTop_toBottomOf="@id/ic_user"
+        tools:text="asfjsdkfjsdljflsdjflsdjflsdjflsdjfldsjfsjdflsjdlfslflkdjfljsdlfjsasjfdlsdjfsdjflsjdflsdjsa" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
