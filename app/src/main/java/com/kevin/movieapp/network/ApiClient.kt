@@ -2,7 +2,7 @@ package com.kevin.movieapp.network
 
 import com.kevin.movieapp.ui.MyApplication.Companion.getContext
 import com.kevin.movieapp.utils.AppConstant
-import com.kevin.movieapp.utils.cache.SSLInterceptor
+import com.kevin.movieapp.utils.cache.TlSSocketFactory
 import com.readystatesoftware.chuck.ChuckInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -10,6 +10,7 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
+
 
 object APIClient {
     val client: Retrofit
@@ -21,14 +22,15 @@ object APIClient {
 
             var client: OkHttpClient? = null
 
-
+            val tlsSocketFactory =
+                TlSSocketFactory()
             client = OkHttpClient.Builder()
                 .connectTimeout(AppConstant.TIME_OUT_LIMIT.toLong(), TimeUnit.SECONDS)
                 .writeTimeout(AppConstant.TIME_OUT_LIMIT.toLong(), TimeUnit.SECONDS)
                 .readTimeout(AppConstant.TIME_OUT_LIMIT.toLong(), TimeUnit.SECONDS)
                 .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
                 .addInterceptor(ChuckInterceptor(getContext()))
-                .addInterceptor(SSLInterceptor(getContext()!!))
+                .sslSocketFactory(tlsSocketFactory, tlsSocketFactory.trustManager)
                 .addInterceptor(ConnectivityInterceptor(getContext()!!))
                 .build()
 
