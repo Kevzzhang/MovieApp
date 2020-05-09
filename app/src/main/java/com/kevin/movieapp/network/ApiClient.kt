@@ -2,6 +2,7 @@ package com.kevin.movieapp.network
 
 import com.kevin.movieapp.ui.MyApplication.Companion.getContext
 import com.kevin.movieapp.utils.AppConstant
+import com.kevin.movieapp.utils.cache.SSLInterceptor
 import com.readystatesoftware.chuck.ChuckInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -27,6 +28,7 @@ object APIClient {
                 .readTimeout(AppConstant.TIME_OUT_LIMIT.toLong(), TimeUnit.SECONDS)
                 .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
                 .addInterceptor(ChuckInterceptor(getContext()))
+                .addInterceptor(SSLInterceptor(getContext()!!))
                 .addInterceptor(ConnectivityInterceptor(getContext()!!))
                 .build()
 
