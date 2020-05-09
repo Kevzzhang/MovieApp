@@ -134,10 +134,6 @@ class MovieDetailActivity : BaseActivity() {
 
         val bottomSheetReview = ReviewBottomSheetFragment.newInstance(movieId)
         bottomSheetReview.show(supportFragmentManager, TAG)
-
-//        val intent = Intent(this, MovieReviewActivity::class.java)
-//        intent.putExtra(MovieReviewActivity.ARG_ID, movieId)
-//        startActivity(intent)
     }
 
     private fun setDataToUI(data: MovieDetail) {
@@ -152,7 +148,7 @@ class MovieDetailActivity : BaseActivity() {
         if (data.rating != null) {
             val ratingTxt = "${data.rating} Rated"
             tv_rating.text = ratingTxt
-            ratingbar.rating = data.rating.toFloat()
+            ratingbar.rating = 3.6f
         } else {
             tv_rating.text = getString(R.string.default_rating)
             ratingbar.rating = 10.0f
