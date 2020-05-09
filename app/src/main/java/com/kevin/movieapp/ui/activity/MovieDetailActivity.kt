@@ -148,7 +148,7 @@ class MovieDetailActivity : BaseActivity() {
         if (data.rating != null) {
             val ratingTxt = "${data.rating} Rated"
             tv_rating.text = ratingTxt
-            ratingbar.rating = 3.6f
+            ratingbar.rating = data.rating.toFloat()/2
         } else {
             tv_rating.text = getString(R.string.default_rating)
             ratingbar.rating = 10.0f
